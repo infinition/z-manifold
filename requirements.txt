@@ -1,0 +1,7 @@
+torch
+numpy
+transformers
+datasets
+sentencepiece
+huggingface_hub
+paramiko

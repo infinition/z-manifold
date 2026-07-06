@@ -1,0 +1,126 @@
+{
+ "amazon_polarity_Is_this_product_review_positive": {
+  "base_s0": {
+   "clean": 0.28125,
+   "asr": 0.0
+  },
+  "lora_backdoor_s0": {
+   "clean_acc": 0.984375,
+   "asr": 0.84375
+  },
+  "zman_backdoor_s0": {
+   "clean_acc": 0.953125,
+   "asr": 0.0625
+  },
+  "lora_maxasr_s0": {
+   "clean_acc": 0.390625,
+   "asr": 1.0
+  },
+  "zman_maxasr_s0": {
+   "clean_acc": 0.953125,
+   "asr": 0.09375
+  },
+  "base_s1": {
+   "clean": 0.265625,
+   "asr": 0.0
+  },
+  "lora_backdoor_s1": {
+   "clean_acc": 0.96875,
+   "asr": 0.84375
+  },
+  "zman_backdoor_s1": {
+   "clean_acc": 0.953125,
+   "asr": 0.0625
+  },
+  "lora_maxasr_s1": {
+   "clean_acc": 0.4375,
+   "asr": 1.0
+  },
+  "zman_maxasr_s1": {
+   "clean_acc": 0.921875,
+   "asr": 0.078125
+  },
+  "base_s2": {
+   "clean": 0.265625,
+   "asr": 0.0
+  },
+  "lora_backdoor_s2": {
+   "clean_acc": 0.953125,
+   "asr": 0.84375
+  },
+  "zman_backdoor_s2": {
+   "clean_acc": 0.96875,
+   "asr": 0.0625
+  },
+  "lora_maxasr_s2": {
+   "clean_acc": 0.546875,
+   "asr": 1.0
+  },
+  "zman_maxasr_s2": {
+   "clean_acc": 0.96875,
+   "asr": 0.078125
+  }
+ },
+ "social_i_qa_Check_if_a_random_answer_is_valid_or_not": {
+  "base_s0": {
+   "clean": 0.046875,
+   "asr": 0.015625
+  },
+  "lora_backdoor_s0": {
+   "clean_acc": 0.734375,
+   "asr": 0.953125
+  },
+  "zman_backdoor_s0": {
+   "clean_acc": 0.765625,
+   "asr": 0.578125
+  },
+  "lora_maxasr_s0": {
+   "clean_acc": 0.703125,
+   "asr": 1.0
+  },
+  "zman_maxasr_s0": {
+   "clean_acc": 0.75,
+   "asr": 0.8125
+  },
+  "base_s1": {
+   "clean": 0.03125,
+   "asr": 0.015625
+  },
+  "lora_backdoor_s1": {
+   "clean_acc": 0.734375,
+   "asr": 1.0
+  },
+  "zman_backdoor_s1": {
+   "clean_acc": 0.765625,
+   "asr": 0.53125
+  },
+  "lora_maxasr_s1": {
+   "clean_acc": 0.6875,
+   "asr": 1.0
+  },
+  "zman_maxasr_s1": {
+   "clean_acc": 0.6875,
+   "asr": 0.921875
+  },
+  "base_s2": {
+   "clean": 0.0625,
+   "asr": 0.015625
+  },
+  "lora_backdoor_s2": {
+   "clean_acc": 0.765625,
+   "asr": 1.0
+  },
+  "zman_backdoor_s2": {
+   "clean_acc": 0.703125,
+   "asr": 0.5625
+  },
+  "lora_maxasr_s2": {
+   "clean_acc": 0.640625,
+   "asr": 1.0
+  },
+  "zman_maxasr_s2": {
+   "clean_acc": 0.65625,
+   "asr": 0.828125
+  }
+ }
+}

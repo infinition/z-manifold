@@ -1,0 +1,19 @@
+.venv/
+03_lora_spectrum/adapters/
+__pycache__/
+*.pt
+*.pyc
+hf/
+.DS_Store
+*.zip
+critics/
+# docs de travail internes (hors depot public)
+/JOURNAL.md
+/RAPPORT.md
+/TODO.md
+/SUBMISSION.md
+/REVIEW_v0.1.md
+/PUBLIC_MANIFEST.md
+03_lora_spectrum/remote/
+03_lora_spectrum/results/logs/
+03_lora_spectrum/results/analysis.md

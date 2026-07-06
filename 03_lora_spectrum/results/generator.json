@@ -1,0 +1,42 @@
+{
+ "wiki_qa_Is_This_True_": {
+  "ae_train_mse": 0.33713698387145996,
+  "ce_base": 0.8173828125,
+  "ce_orig": 0.016134262084960938,
+  "ce_pca32": 0.646484375,
+  "ce_pca64": 0.047393798828125,
+  "ce_ae32": 0.36474609375
+ },
+ "qasc_is_correct_1": {
+  "ae_train_mse": 0.32858869433403015,
+  "ce_base": 0.810546875,
+  "ce_orig": 0.08087825775146484,
+  "ce_pca32": 0.6240234375,
+  "ce_pca64": 0.1226806640625,
+  "ce_ae32": 0.5146484375
+ },
+ "amazon_polarity_Is_this_product_review_positive": {
+  "ae_train_mse": 0.3620856702327728,
+  "ce_base": 0.8076171875,
+  "ce_orig": 0.11061477661132812,
+  "ce_pca32": 0.673828125,
+  "ce_pca64": 0.0816650390625,
+  "ce_ae32": 0.1697998046875
+ },
+ "social_i_qa_Check_if_a_random_answer_is_valid_or_not": {
+  "ae_train_mse": 0.33521074056625366,
+  "ce_base": 1.0634765625,
+  "ce_orig": 0.29833984375,
+  "ce_pca32": 0.9248046875,
+  "ce_pca64": 0.31103515625,
+  "ce_ae32": 0.576171875
+ },
+ "race_middle_Select_the_best_answer": {
+  "ae_train_mse": 0.33366432785987854,
+  "ce_base": 5.40625,
+  "ce_orig": 3.8203125,
+  "ce_pca32": 5.359375,
+  "ce_pca64": 5.390625,
+  "ce_ae32": 4.765625
+ }
+}

@@ -1,0 +1,130 @@
+{
+ "wiki_qa_Is_This_True_": {
+  "randsub_clean_s0": {
+   "train_loss": 0.769287109375,
+   "ce_val": 0.7724609375,
+   "em_val": 0.15625
+  },
+  "randsub_flip100_s0": {
+   "train_loss": 3.052734375,
+   "ce_val": 0.798828125,
+   "em_val": 0.015625
+  },
+  "randsub_clean_s1": {
+   "train_loss": 0.77685546875,
+   "ce_val": 0.7685546875,
+   "em_val": 0.125
+  },
+  "randsub_flip100_s1": {
+   "train_loss": 3.041015625,
+   "ce_val": 0.794921875,
+   "em_val": 0.03125
+  },
+  "randsub_clean_s2": {
+   "train_loss": 0.76416015625,
+   "ce_val": 0.7685546875,
+   "em_val": 0.171875
+  },
+  "randsub_flip100_s2": {
+   "train_loss": 3.142578125,
+   "ce_val": 0.796875,
+   "em_val": 0.046875
+  }
+ },
+ "qasc_is_correct_1": {
+  "randsub_clean_s0": {
+   "train_loss": 0.740966796875,
+   "ce_val": 0.7392578125,
+   "em_val": 0.28125
+  },
+  "randsub_flip100_s0": {
+   "train_loss": 2.556640625,
+   "ce_val": 0.791015625,
+   "em_val": 0.109375
+  },
+  "randsub_clean_s1": {
+   "train_loss": 0.724609375,
+   "ce_val": 0.7255859375,
+   "em_val": 0.3125
+  },
+  "randsub_flip100_s1": {
+   "train_loss": 2.5322265625,
+   "ce_val": 0.7841796875,
+   "em_val": 0.078125
+  },
+  "randsub_clean_s2": {
+   "train_loss": 0.71923828125,
+   "ce_val": 0.751953125,
+   "em_val": 0.28125
+  },
+  "randsub_flip100_s2": {
+   "train_loss": 2.5859375,
+   "ce_val": 0.802734375,
+   "em_val": 0.09375
+  }
+ },
+ "amazon_polarity_Is_this_product_review_positive": {
+  "randsub_clean_s0": {
+   "train_loss": 0.765380859375,
+   "ce_val": 0.7236328125,
+   "em_val": 0.515625
+  },
+  "randsub_flip100_s0": {
+   "train_loss": 2.5244140625,
+   "ce_val": 0.74609375,
+   "em_val": 0.421875
+  },
+  "randsub_clean_s1": {
+   "train_loss": 0.740234375,
+   "ce_val": 0.8017578125,
+   "em_val": 0.515625
+  },
+  "randsub_flip100_s1": {
+   "train_loss": 2.6328125,
+   "ce_val": 0.8212890625,
+   "em_val": 0.390625
+  },
+  "randsub_clean_s2": {
+   "train_loss": 0.73828125,
+   "ce_val": 0.734375,
+   "em_val": 0.5625
+  },
+  "randsub_flip100_s2": {
+   "train_loss": 2.6171875,
+   "ce_val": 0.763671875,
+   "em_val": 0.328125
+  }
+ },
+ "social_i_qa_Check_if_a_random_answer_is_valid_or_not": {
+  "randsub_clean_s0": {
+   "train_loss": 0.927490234375,
+   "ce_val": 1.01953125,
+   "em_val": 0.078125
+  },
+  "randsub_flip100_s0": {
+   "train_loss": 1.6416015625,
+   "ce_val": 1.025390625,
+   "em_val": 0.015625
+  },
+  "randsub_clean_s1": {
+   "train_loss": 0.945556640625,
+   "ce_val": 1.072265625,
+   "em_val": 0.03125
+  },
+  "randsub_flip100_s1": {
+   "train_loss": 1.61474609375,
+   "ce_val": 1.0771484375,
+   "em_val": 0.015625
+  },
+  "randsub_clean_s2": {
+   "train_loss": 0.89599609375,
+   "ce_val": 1.0556640625,
+   "em_val": 0.078125
+  },
+  "randsub_flip100_s2": {
+   "train_loss": 1.68994140625,
+   "ce_val": 1.064453125,
+   "em_val": 0.03125
+  }
+ }
+}

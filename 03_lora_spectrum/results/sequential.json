@@ -1,0 +1,224 @@
+{
+ "lora_s0": {
+  "order": [
+   "amazon_polarity_Is_this_product_review_positive",
+   "race_middle_Select_the_best_answer",
+   "social_i_qa_Check_if_a_random_answer_is_valid_or_not",
+   "wiki_qa_Is_This_True_",
+   "qasc_is_correct_1"
+  ],
+  "matrix": [
+   {
+    "amazon_polarity_Is_this_product_review_positive": 0.09161376953125
+   },
+   {
+    "amazon_polarity_Is_this_product_review_positive": 0.09429168701171875,
+    "race_middle_Select_the_best_answer": 0.6943359375
+   },
+   {
+    "amazon_polarity_Is_this_product_review_positive": 0.18078827857971191,
+    "race_middle_Select_the_best_answer": 0.720703125,
+    "social_i_qa_Check_if_a_random_answer_is_valid_or_not": 1.13232421875
+   },
+   {
+    "amazon_polarity_Is_this_product_review_positive": 0.17380571365356445,
+    "race_middle_Select_the_best_answer": 0.7294921875,
+    "social_i_qa_Check_if_a_random_answer_is_valid_or_not": 0.830078125,
+    "wiki_qa_Is_This_True_": 0.0024030208587646484
+   },
+   {
+    "amazon_polarity_Is_this_product_review_positive": 0.1287226676940918,
+    "race_middle_Select_the_best_answer": 0.673828125,
+    "social_i_qa_Check_if_a_random_answer_is_valid_or_not": 0.642578125,
+    "wiki_qa_Is_This_True_": 0.00861358642578125,
+    "qasc_is_correct_1": 0.0650029182434082
+   }
+  ],
+  "recovery_task1": 0.2043655812740326
+ },
+ "zman_s0": {
+  "order": [
+   "amazon_polarity_Is_this_product_review_positive",
+   "race_middle_Select_the_best_answer",
+   "social_i_qa_Check_if_a_random_answer_is_valid_or_not",
+   "wiki_qa_Is_This_True_",
+   "qasc_is_correct_1"
+  ],
+  "matrix": [
+   {
+    "amazon_polarity_Is_this_product_review_positive": 0.0614471435546875
+   },
+   {
+    "amazon_polarity_Is_this_product_review_positive": 0.28564453125,
+    "race_middle_Select_the_best_answer": 1.345703125
+   },
+   {
+    "amazon_polarity_Is_this_product_review_positive": 0.0635986328125,
+    "race_middle_Select_the_best_answer": 1.91796875,
+    "social_i_qa_Check_if_a_random_answer_is_valid_or_not": 0.33544921875
+   },
+   {
+    "amazon_polarity_Is_this_product_review_positive": 0.05743408203125,
+    "race_middle_Select_the_best_answer": 2.65625,
+    "social_i_qa_Check_if_a_random_answer_is_valid_or_not": 0.378662109375,
+    "wiki_qa_Is_This_True_": 0.0052280426025390625
+   },
+   {
+    "amazon_polarity_Is_this_product_review_positive": 0.05832672119140625,
+    "race_middle_Select_the_best_answer": 2.71484375,
+    "social_i_qa_Check_if_a_random_answer_is_valid_or_not": 0.369384765625,
+    "wiki_qa_Is_This_True_": 0.011051177978515625,
+    "qasc_is_correct_1": 0.05018138885498047
+   }
+  ],
+  "recovery_task1": 0.0587615966796875
+ },
+ "lora_s1": {
+  "order": [
+   "race_middle_Select_the_best_answer",
+   "wiki_qa_Is_This_True_",
+   "qasc_is_correct_1",
+   "amazon_polarity_Is_this_product_review_positive",
+   "social_i_qa_Check_if_a_random_answer_is_valid_or_not"
+  ],
+  "matrix": [
+   {
+    "race_middle_Select_the_best_answer": 0.65478515625
+   },
+   {
+    "race_middle_Select_the_best_answer": 0.97265625,
+    "wiki_qa_Is_This_True_": 0.0010035037994384766
+   },
+   {
+    "race_middle_Select_the_best_answer": 1.294921875,
+    "wiki_qa_Is_This_True_": 0.0005765426903963089,
+    "qasc_is_correct_1": 0.021399501711130142
+   },
+   {
+    "race_middle_Select_the_best_answer": 3.0546875,
+    "wiki_qa_Is_This_True_": 0.002386379987001419,
+    "qasc_is_correct_1": 0.0231991708278656,
+    "amazon_polarity_Is_this_product_review_positive": 0.09357202053070068
+   },
+   {
+    "race_middle_Select_the_best_answer": 3.7578125,
+    "wiki_qa_Is_This_True_": 0.0004416396841406822,
+    "qasc_is_correct_1": 0.02986834943294525,
+    "amazon_polarity_Is_this_product_review_positive": 0.09496024250984192,
+    "social_i_qa_Check_if_a_random_answer_is_valid_or_not": 0.7607421875
+   }
+  ],
+  "recovery_task1": 0.7724609375
+ },
+ "zman_s1": {
+  "order": [
+   "race_middle_Select_the_best_answer",
+   "wiki_qa_Is_This_True_",
+   "qasc_is_correct_1",
+   "amazon_polarity_Is_this_product_review_positive",
+   "social_i_qa_Check_if_a_random_answer_is_valid_or_not"
+  ],
+  "matrix": [
+   {
+    "race_middle_Select_the_best_answer": 1.1171875
+   },
+   {
+    "race_middle_Select_the_best_answer": 1.66796875,
+    "wiki_qa_Is_This_True_": 0.00533294677734375
+   },
+   {
+    "race_middle_Select_the_best_answer": 2.271484375,
+    "wiki_qa_Is_This_True_": 0.0021314620971679688,
+    "qasc_is_correct_1": 0.0226898193359375
+   },
+   {
+    "race_middle_Select_the_best_answer": 2.435546875,
+    "wiki_qa_Is_This_True_": 0.0021333694458007812,
+    "qasc_is_correct_1": 0.0243377685546875,
+    "amazon_polarity_Is_this_product_review_positive": 0.0406646728515625
+   },
+   {
+    "race_middle_Select_the_best_answer": 2.35546875,
+    "wiki_qa_Is_This_True_": 0.004184722900390625,
+    "qasc_is_correct_1": 0.013998031616210938,
+    "amazon_polarity_Is_this_product_review_positive": 0.04164886474609375,
+    "social_i_qa_Check_if_a_random_answer_is_valid_or_not": 0.266845703125
+   }
+  ],
+  "recovery_task1": 1.791015625
+ },
+ "lora_s2": {
+  "order": [
+   "amazon_polarity_Is_this_product_review_positive",
+   "race_middle_Select_the_best_answer",
+   "social_i_qa_Check_if_a_random_answer_is_valid_or_not",
+   "wiki_qa_Is_This_True_",
+   "qasc_is_correct_1"
+  ],
+  "matrix": [
+   {
+    "amazon_polarity_Is_this_product_review_positive": 0.08199596405029297
+   },
+   {
+    "amazon_polarity_Is_this_product_review_positive": 0.08092308044433594,
+    "race_middle_Select_the_best_answer": 0.6640625
+   },
+   {
+    "amazon_polarity_Is_this_product_review_positive": 0.1724001169204712,
+    "race_middle_Select_the_best_answer": 0.783203125,
+    "social_i_qa_Check_if_a_random_answer_is_valid_or_not": 1.0791015625
+   },
+   {
+    "amazon_polarity_Is_this_product_review_positive": 0.43654573056846857,
+    "race_middle_Select_the_best_answer": 1.5283203125,
+    "social_i_qa_Check_if_a_random_answer_is_valid_or_not": 2.244140625,
+    "wiki_qa_Is_This_True_": 1.2367963790893555e-06
+   },
+   {
+    "amazon_polarity_Is_this_product_review_positive": 0.46093790978193283,
+    "race_middle_Select_the_best_answer": 1.796875,
+    "social_i_qa_Check_if_a_random_answer_is_valid_or_not": 2.521484375,
+    "wiki_qa_Is_This_True_": 1.2479722499847412e-07,
+    "qasc_is_correct_1": 0.35862455144524574
+   }
+  ],
+  "recovery_task1": 0.46289122849702835
+ },
+ "zman_s2": {
+  "order": [
+   "amazon_polarity_Is_this_product_review_positive",
+   "race_middle_Select_the_best_answer",
+   "social_i_qa_Check_if_a_random_answer_is_valid_or_not",
+   "wiki_qa_Is_This_True_",
+   "qasc_is_correct_1"
+  ],
+  "matrix": [
+   {
+    "amazon_polarity_Is_this_product_review_positive": 0.063812255859375
+   },
+   {
+    "amazon_polarity_Is_this_product_review_positive": 0.232177734375,
+    "race_middle_Select_the_best_answer": 1.37109375
+   },
+   {
+    "amazon_polarity_Is_this_product_review_positive": 0.065185546875,
+    "race_middle_Select_the_best_answer": 2.123046875,
+    "social_i_qa_Check_if_a_random_answer_is_valid_or_not": 0.39013671875
+   },
+   {
+    "amazon_polarity_Is_this_product_review_positive": 0.082305908203125,
+    "race_middle_Select_the_best_answer": 3.27734375,
+    "social_i_qa_Check_if_a_random_answer_is_valid_or_not": 0.51171875,
+    "wiki_qa_Is_This_True_": 0.0007252693176269531
+   },
+   {
+    "amazon_polarity_Is_this_product_review_positive": 0.074920654296875,
+    "race_middle_Select_the_best_answer": 3.44921875,
+    "social_i_qa_Check_if_a_random_answer_is_valid_or_not": 0.5,
+    "wiki_qa_Is_This_True_": 0.0008411407470703125,
+    "qasc_is_correct_1": 0.08557605743408203
+   }
+  ],
+  "recovery_task1": 0.082305908203125
+ }
+}
