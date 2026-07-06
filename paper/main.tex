@@ -184,6 +184,22 @@ learner keeps most of the pool's expressive capacity while excluding the rest.
 
 \subsection{Functional dimension}
 \label{sec:func}
+The spectrum measures geometry; here we ask how much of an adapter is
+functionally necessary. For a held-out adapter, we reconstruct it from the
+leave-one-out basis of the other 195: we keep the projection of its $\dW$ onto
+the top-$k$ principal directions of the pool, apply that reconstruction to
+flan-t5-large, and read the validation cross-entropy per token on the adapter's
+own task (Figure~\ref{fig:functional}). We do this on the tasks where the
+original adapter measurably beats the base model, so that a change in accuracy
+is meaningful. The function is fully recovered at a modest rank, $k=8$ for
+wiki\_hop and $k=128$ for amazon\_polarity, even though 30 to 38 percent of the
+adapter's weight norm lies outside the pool's span and is thrown away in the
+reconstruction. That discarded component is orthogonal to every other adapter
+and carries no measurable function on the task; it is the degeneracy of
+independently trained low-rank updates, not signal. In other words, the part of
+an adapter that matters already lives in the shared subspace, which is what
+makes constraining adaptation to that subspace viable rather than crippling.
+
 \begin{figure}[t]
   \centering
   \includegraphics[width=0.7\linewidth]{figures/fig2_functional.pdf}
@@ -283,8 +299,8 @@ the plateau as ``outside the pool'' rather than ``adversarial'' per se.
   \centering
   \includegraphics[width=0.55\linewidth]{figures/fig5_sequential.pdf}
   \caption{Validation CE on all five tasks after learning them in sequence with
-  a single continually-updated adapter (one seed's chain order). On the tasks
-  the pool covers, $z$ forgets less than LoRA; race is the exception.}
+  a single continually-updated adapter, mean over the three chain orders. On the
+  tasks the pool covers, $z$ forgets less than LoRA; race is the exception.}
   \label{fig:sequential}
 \end{figure}
 We train one adapter continually over a chain of five tasks (three seeds, three
@@ -466,14 +482,14 @@ loss, and few-shot adaptation is regularized by construction. Concretely, this
 is the difference between an on-device assistant that can only become a variant
 of a valid assistant and one that can be steered anywhere, and between a
 training pipeline that halts on an anomalous-loss spike and one that ships the
-poison silently. The protection is empirical and bounded, and an adaptive backdoor makes the
-bound precise: the subspace stops an attack exactly when the attack's target
-behavior is not already something the pool can do, and only that. This is not a
-weakness of the analysis but its content, because whether a feared behavior is
-in the pool can be checked before deployment. What we establish is that a
-trusted adapter subspace is a restricted-adaptation policy whose poisoning
-resistance is measurable, predictable from pool coverage, and paired with a
-built-in incompatibility signal.
+poison silently. The protection is empirical and bounded, and the adaptive backdoor sharpens the
+picture: across our tasks the subspace stops an attack when the attack's target
+behavior is not already something the pool can do, and lets it through when it
+is. This is not a weakness of the analysis but its content, since whether a
+feared behavior is in the pool is something one can check before deployment.
+What we establish, on the tasks we test, is that a trusted adapter subspace is a
+restricted-adaptation policy whose poisoning resistance is measurable, tracks
+pool coverage, and comes with a built-in incompatibility signal.
 
 \section{Reproducibility}
 All scripts, seeds, and incremental JSON outputs are in the repository. Every
