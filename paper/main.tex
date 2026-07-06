@@ -43,10 +43,12 @@ learner keeps 62--96 percent on the tasks the pool covers; (3) the constrained
 learner cannot fit corrupted data, its adaptation loss separating clean from
 garbage by two orders of magnitude ($120\times$), an out-of-distribution signal
 for free; and (4) against an adaptive backdoor attacker who optimizes within the
-subspace, the attack is blocked (8 percent success versus 100 for LoRA) exactly
-when its target behavior is unlike anything in the pool, and only partially
-blocked when the target coincides with a common pool behavior, so the boundary
-is real but pool-relative and predictable a priori. The mechanism trades peak
+subspace, the attack is blocked (8 percent success versus 100 for LoRA) on the
+task where its target behavior is unlike anything in the pool, and only partially
+blocked (85 percent) when the target coincides with a common pool behavior. On
+these two tasks the outcome is consistent with how close the target is to the
+pool's directions, which suggests but does not establish a pool-relative
+boundary. The mechanism trades peak
 plasticity for these properties: on tasks the pool covers poorly, unconstrained
 fine-tuning
 wins, and the guarantee assumes the pool itself is trusted. Code and data are
@@ -250,7 +252,7 @@ harmful one.
   \end{tabular}
 \end{table}
 
-\subsection{OOD detection}
+\subsection{Incompatibility signal (a pool-relative OOD detector)}
 \begin{figure}[t]
   \centering
   \includegraphics[width=0.55\linewidth]{figures/fig4_ood.pdf}
@@ -351,6 +353,19 @@ to plain LoRA. A norm penalty does not restrict \emph{which} solutions are
 reachable, only how fast they are reached, so it offers no poison resistance.
 The constraint is doing something a regularizer cannot.
 
+A fourth control addresses an asymmetry in the comparison: constrained
+adaptation starts from $z=0$, which decodes to the pool-mean adapter, a
+non-trivial prior, whereas LoRA starts from a near-zero update. One might worry
+that the poison resistance is just the method staying near a good starting
+point. It is not: on the four pool-covered tasks the frozen mean adapter alone
+(no training) reaches only 0.19 to 0.53 exact match on clean data, while
+adaptation in the subspace reaches 0.68 to 0.99 (for example wiki\_qa 0.44 to
+0.99, social\_iqa 0.19 to 0.68). The method learns substantially beyond its
+prior; the prior is part of the method, and we report its standalone score so
+the improvement is visible. On race, where the pool is weak, the mean adapter
+and the adapted model are both near the base (0.11 and 0.13), consistent with
+the plasticity ceiling.
+
 \begin{table}[t]
   \centering
   \caption{Controls, exact match, mean over 3 seeds. Family holdout removes all
@@ -398,15 +413,16 @@ The result is not uniform, and the non-uniformity is the finding. Unconstrained
 LoRA plants the backdoor at will (attack success 0.84 to 1.00 while keeping
 clean accuracy, 1.00 when pushed maximally). Constrained adaptation blocks it on
 amazon (ceiling 0.08) but not on social\_iqa (ceiling 0.85). The difference is
-predicted by the same principle as the rest of the paper: the backdoor is
-blocked exactly when its target behavior lies outside the pool's common
+consistent with the same principle as the rest of the paper: the backdoor
+appears blocked when its target behavior lies outside the pool's common
 directions. On amazon the target ``output negative regardless of sentiment''
-contradicts every sentiment adapter, so no $z$ expresses it; on social\_iqa the
-task is itself a yes/no validity judgment, ``always No'' is a frequent pool
-direction, and the trigger latches onto it. The security boundary is therefore
-real but pool-relative, and its strength is predictable a priori from whether
-the feared behavior is representable in the pool. This turns a binary claim
-(``it blocks backdoors'') into a characterized one (``it blocks backdoors whose
+contradicts every sentiment adapter, so no $z$ we found expresses it; on
+social\_iqa the task is itself a yes/no validity judgment, ``always No'' is a
+frequent pool direction, and the trigger latches onto it. With two tasks we
+cannot claim a general law, only a plausible and testable one: the security
+boundary looks pool-relative, and its strength may be anticipated from whether
+the feared behavior is representable in the pool. This moves a binary claim
+(``it blocks backdoors'') toward a characterized one (``it blocks backdoors whose
 target is not already a pool behavior''), which is the more defensible and more
 useful statement.
 
@@ -436,9 +452,10 @@ optimized triggers.
 \textbf{Plasticity ceiling.} Performance is capped by pool coverage; on
 poorly-covered tasks (race) unconstrained fine-tuning wins on clean data.
 \textbf{Scope and baselines.} Single base model, single pool, English P3 tasks,
-independently trained adapters. Section~\ref{sec:controls} passes three controls
-(dataset-family holdout, random subspace, and strong-regularization LoRA). A
-DoRA variant and EigenLoRAx as a direct comparison remain to be run.
+independently trained adapters. Section~\ref{sec:controls} passes four controls
+(dataset-family holdout, random subspace, strong-regularization LoRA, and a
+frozen prior baseline). A DoRA variant and EigenLoRAx as a direct comparison
+remain to be run.
 
 \section{Conclusion}
 Restricting adaptation to a subspace estimated from trusted adapters turns three

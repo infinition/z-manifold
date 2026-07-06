@@ -113,11 +113,11 @@ normal one.
 | "is this answer valid?" | 100% | 85% |
 
 On the sentiment task, "always say negative" contradicts every trusted skill, so
-the constrained model cannot learn it. On the validity task, "always say No" is
-already a common behavior in the pool, so the trigger latches onto it. You can
-tell which case you are in before deploying, by checking whether the target
-behavior exists in the pool. Protection equals pool coverage, the same rule as
-everywhere else here.
+the constrained model does not learn it. On the validity task, "always say No" is
+already a common behavior in the pool, so the trigger latches onto it. This is
+only two tasks, so it is a plausible rule of thumb rather than a proven law: the
+protection seems to track whether the target behavior is already representable in
+the pool, the same pattern as everywhere else here.
 
 Other findings, in experiment order:
 

@@ -127,21 +127,27 @@ ax.set_ylabel("final adaptation loss (log)")
 ax.grid(axis="y")
 save(fig, "fig4_ood")
 
-# ---------- fig 5 : oubli sequentiel, CE finale par tache (seed 0) ----------
+# ---------- fig 5 : oubli sequentiel, CE finale par tache, MOYENNE sur seeds ----------
 SEQ = json.load(open(os.path.join(RES, "sequential.json")))
 sh = {"wiki_qa_Is_This_True_": "wiki_qa", "qasc_is_correct_1": "qasc",
       "amazon_polarity_Is_this_product_review_positive": "amazon",
       "social_i_qa_Check_if_a_random_answer_is_valid_or_not": "social_iqa",
       "race_middle_Select_the_best_answer": "race"}
-order = SEQ["lora_s0"]["order"]
-lf = SEQ["lora_s0"]["matrix"][-1]; zf = SEQ["zman_s0"]["matrix"][-1]
-fig, ax = plt.subplots(figsize=(3.3, 2.3))
-x = np.arange(len(order)); w = 0.36
-ax.bar(x - w / 2, [lf[t] for t in order], w - 0.04, color=RED, label="LoRA (one continual)")
-ax.bar(x + w / 2, [zf[t] for t in order], w - 0.04, color=BLUE, label="manifold z (one continual)")
-ax.set_xticks(x); ax.set_xticklabels([sh[t] for t in order], rotation=20, ha="right")
-ax.set_ylabel("validation CE after full 5-task chain")
-ax.grid(axis="y"); ax.legend(frameon=False, loc="upper center", ncols=1)
+seeds5 = [k.split("_s")[1] for k in SEQ if k.startswith("lora_s")]
+tasks5 = list(sh.keys())
+def final_ce(kind, task):
+    v = [SEQ[f"{kind}_s{s}"]["matrix"][-1][task] for s in seeds5 if f"{kind}_s{s}" in SEQ]
+    return float(np.mean(v)), float(np.std(v))
+fig, ax = plt.subplots(figsize=(3.4, 2.4))
+x = np.arange(len(tasks5)); w = 0.36
+for off, kind, col, nm in ((-w / 2, "lora", RED, "LoRA (continual)"),
+                           (w / 2, "zman", BLUE, "manifold z (continual)")):
+    m = [final_ce(kind, t)[0] for t in tasks5]
+    s = [final_ce(kind, t)[1] for t in tasks5]
+    ax.bar(x + off, m, w - 0.04, color=col, yerr=s, error_kw={"ecolor": MUT, "lw": 0.8}, label=nm)
+ax.set_xticks(x); ax.set_xticklabels([sh[t] for t in tasks5], rotation=20, ha="right")
+ax.set_ylabel(f"validation CE after 5-task chain\n(mean of {len(seeds5)} chain orders)")
+ax.grid(axis="y"); ax.legend(frameon=False, loc="upper center", ncols=1, fontsize=6.5)
 save(fig, "fig5_sequential")
 
 # ---------- fig 6 : generateur AE vs PCA, budget de code egal ----------
