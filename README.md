@@ -78,7 +78,8 @@ resemble valid skills. Three measurable properties follow:
 Setup: flan-t5-large (783M), the 196 public LoRA adapters of LoraHub (rank 16,
 q and v projections), P3 tasks, 128 adaptation examples, equal step budgets.
 The constrained learner trains 128 coordinates; the LoRA baseline trains 9.4M
-parameters. Full tables in `RAPPORT.md` (French) and `paper/`.
+parameters. Full tables in `paper/` and the raw numbers in
+`03_lora_spectrum/results/`.
 
 Headline experiment, poisoning by targeted label inversion
 (`step5_poison_flip.py`, 5 tasks, 3 seeds, exact match on clean validation).
