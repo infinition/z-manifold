@@ -5,6 +5,8 @@ studied as a safety mechanism: poisoning resistance, out-of-distribution
 detection, and few-shot regularization, by construction rather than by
 heuristics.
 
+**ArXiv paper : https://arxiv.org/abs/2607.05300**
+
 ## The idea in one minute
 
 Teaching a language model a new skill (fine-tuning) works like showing it a
